@@ -92,33 +92,33 @@ def read_from_rocket(source):
 
 
 if name == 'book':
-    read_from_amazon('reviews_Books_5.json')
+    read_from_amazon('data/raw/reviews_Books_5.json')
 if name == 'bookr':
-    read_from_kindle('Books.csv')
+    read_from_kindle('data/raw/Books.csv')
 if name == 'bookv':
-    read_from_amazon('Books_5.json')
+    read_from_amazon('data/raw/Books_5.json')
 if name == 'kindle':
-    read_from_kindle('Kindle_Store.csv')
+    read_from_kindle('data/raw/Kindle_Store.csv')
 if name == 'movie':
-    read_from_movie('ratings_Movies_and_TV.csv')
+    read_from_movie('data/raw/ratings_Movies_and_TV.csv')
 if name == 'beauty':
-    read_from_kindle('All_Beauty.csv')
+    read_from_kindle('data/raw/All_Beauty.csv')
 if name == 'cloth':
-    read_from_kindle('Clothing_Shoes_and_Jewelry.csv')
+    read_from_kindle('data/raw/Clothing_Shoes_and_Jewelry.csv')
 elif name == 'taobao':
-    read_from_taobao('UserBehavior.csv')
+    read_from_taobao('data/raw/UserBehavior.csv')
 elif name == 'tmall':
-    read_from_tmall('tmall-click.inter')
+    read_from_tmall('data/raw/tmall-click.inter')
 elif name == 'rocket':
-    read_from_rocket('retailrocket-view.inter')
+    read_from_rocket('data/raw/retailrocket-view.inter')
     # avg items: 10.586210988489379
     # total items: 81635
     # total behaviors: 356840
 elif name == 'gowalla':
-    read_from_gowalla('gowalla.inter')
+    read_from_gowalla('data/raw/gowalla.inter')
 elif name == 'gowalla10':
     filter_size = 10
-    read_from_gowalla('gowalla.inter')
+    read_from_gowalla('data/raw/gowalla.inter')
     # avg items: 31.466796934631944
     # total items: 174605
     # total behaviors: 2061264

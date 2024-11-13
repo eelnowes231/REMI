@@ -38,13 +38,17 @@ $ python process/data.py book
 
 ### Prepare environment
 ```
-conda env create --file env.yml
+conda create -n remi python=3.10
+conda activate remi
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
+conda env update -f env.yaml
 ```
 
 ### Train and evaluate
 
 Run the baseline.
 ```
+$ python src/train.py --model_type ComiRec-SA --gpu 0 --dataset kindle
 $ python src/train.py --model_type ComiRec-SA --gpu 0 --dataset book
 $ python src/train.py --model_type ComiRec-SA --gpu 0 --dataset gowalla
 $ python src/train.py --model_type ComiRec-SA --gpu 0 --dataset rocket

@@ -68,7 +68,8 @@ if __name__ == '__main__':
         test_iter = 1000
     elif args.dataset == 'kindle':
         path = './data/kindle_data/'
-        item_count = 260154 + 1
+        # item_count = 260154 + 1
+        item_count = 185370 + 1
         batch_size = 128
         seq_len = 20
         test_iter = 200
