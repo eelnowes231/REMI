@@ -13,6 +13,12 @@ if len(sys.argv) > 1:
 if len(sys.argv) > 2:
     filter_size = int(sys.argv[2])
 
+path = './data/' + name + '_data/'
+if not os.path.exists(path):
+    os.mkdir(path)
+
+stats_file = path + name + '_stats.txt'
+
 users = defaultdict(list)
 item_count = defaultdict(int)
 
@@ -128,6 +134,7 @@ items.sort(key=lambda x:x[1], reverse=True)
 
 item_total = 0
 print("Use core", filter_size)
+
 for index, (iid, num) in enumerate(items):
     if num >= filter_size:
         item_total = index + 1
@@ -180,9 +187,6 @@ def export_data(name, user_list):
                     total_data += 1
     return total_data
 
-path = './data/' + name + '_data/'
-if not os.path.exists(path):
-    os.mkdir(path)
 
 export_map(path + name + '_user_map.txt', user_map)
 export_map(path + name + '_item_map.txt', item_map)
@@ -194,3 +198,11 @@ print('avg items: ', filter_seq_count/len(user_ids))
 print('total items: ', item_total)
 print('total behaviors: ', total_train + total_valid + total_test)
 print('total users: ', len(filter_user_ids))
+
+with open(stats_file, 'a') as f:
+    print("Use core", filter_size, file=f)
+    print('avg items: ', filter_seq_count/len(user_ids), file=f)
+    print('total items: ', item_total, file=f)
+    print('total behaviors: ', total_train + total_valid + total_test, file=f)
+    print('total users: ', len(filter_user_ids), file=f)
+
